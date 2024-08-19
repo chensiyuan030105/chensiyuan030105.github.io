@@ -1,7 +1,7 @@
 ---
 title: "Fluid simulation by SPH "
 collection: simulation method learning
-category: manuscripts
+category: fluid-simulation
 permalink: /project/project_1
 excerpt: 'This project aims to simulate fluids using SPH (Smoothed Particle Hydrodynamics).'
 date: 2009-10-01
