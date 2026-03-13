@@ -10,13 +10,13 @@ redirect_from:
 Education
 ======
 
-* **Shanghai Jiao Tong University**, B.S. in Physics, September 2021 - June 2025
+* **Shanghai Jiao Tong University**, B.Sc. in Physics, September 2021 - June 2025
 * **University of Toronto**, Exchange Student, September 2024 - December 2024
 
 Current Status
 ======
 
-* **University of British Columbia**, incoming Ph.D. student
+* **The University of British Columbia**, Incoming Ph.D. Student
 
 Research Experience
 ======

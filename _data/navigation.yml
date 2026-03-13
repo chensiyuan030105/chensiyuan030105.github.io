@@ -19,7 +19,10 @@ main:
         
   # - title: "Blog Posts"
   #   url: /year-archive/
-    
+
+  - title: "About"
+    url: /introduction/
+
   - title: "CV"
     url: /cv/
     
