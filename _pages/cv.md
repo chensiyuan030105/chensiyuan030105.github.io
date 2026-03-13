@@ -18,6 +18,13 @@ Current Status
 
 * **University of British Columbia**, incoming Ph.D. student
 
+Research Experience
+======
+
+* **The University of Hong Kong**, Research Assistant, September 2025 - Present
+  * Taku Komura Group, **AI, Robotics and Visual Computing**, School of Computing and Data Science
+  * Advisor: **Professor Taku Komura**
+
 Research Interests
 ======
 
@@ -25,10 +32,3 @@ Research Interests
 * Computer graphics
 * Machine learning
 * Physics-based simulation
-
-Projects
-======
-
-<ul>{% for post in site.projects reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
