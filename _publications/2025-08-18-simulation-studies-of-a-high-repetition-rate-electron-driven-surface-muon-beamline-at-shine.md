@@ -3,6 +3,8 @@ title: "Simulation studies of a high-repetition-rate electron-driven surface muo
 collection: publications
 order: 4
 permalink: /publication/simulation-studies-of-a-high-repetition-rate-electron-driven-surface-muon-beamline-at-shine
+header:
+  teaser: papers/placeholder-duck.svg
 excerpt: "Simulation studies for a high-repetition-rate electron-driven surface muon beamline at SHINE."
 date: 2025-08-18
 venue: "Physical Review Accelerators and Beams"

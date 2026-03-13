@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Duck placeholder image</title>
+  <desc id="desc">A simple yellow duck illustration used as a placeholder for publication figures.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#dcefff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <ellipse cx="400" cy="395" rx="220" ry="24" fill="#c8d9e8" opacity="0.45"/>
+  <ellipse cx="350" cy="255" rx="140" ry="95" fill="#ffd44d"/>
+  <circle cx="505" cy="190" r="68" fill="#ffd44d"/>
+  <ellipse cx="540" cy="205" rx="46" ry="24" fill="#ff9c3a"/>
+  <ellipse cx="551" cy="203" rx="22" ry="10" fill="#ffb15c"/>
+  <circle cx="522" cy="174" r="7" fill="#263238"/>
+  <path d="M265 250c18-52 64-96 130-112-34 34-49 76-52 124-27 6-54 2-78-12z" fill="#ffe27a"/>
+  <path d="M275 295c42 46 105 71 175 68-31 20-73 32-120 32-61 0-115-20-151-51 34-6 66-23 96-49z" fill="#ffc938"/>
+  <path d="M230 185c-28 18-46 43-53 73 14-14 37-26 62-32-5-12-8-26-9-41z" fill="#fff3b0"/>
+  <text x="400" y="82" text-anchor="middle" font-size="34" font-family="Arial, Helvetica, sans-serif" fill="#355070" font-weight="700">Publication Figure Placeholder</text>
+  <text x="400" y="118" text-anchor="middle" font-size="22" font-family="Arial, Helvetica, sans-serif" fill="#5f7a8f">Duck first, figure later</text>
+</svg>

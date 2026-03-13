@@ -3,6 +3,8 @@ title: "Plasticine3D: 3D Non-Rigid Editing with Text Guidance by Multi-View Embe
 collection: publications
 order: 5
 permalink: /publication/plasticine3d
+header:
+  teaser: papers/placeholder-duck.svg
 excerpt: "A text-guided framework for 3D non-rigid editing through multi-view embedding optimization."
 date: 2023-12-15
 venue: "arXiv"

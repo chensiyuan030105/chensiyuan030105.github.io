@@ -3,6 +3,8 @@ title: "Fast Subspace Fluid Simulation with a Temporally-Aware Basis"
 collection: publications
 order: 3
 permalink: /publication/fast-subspace-fluid-simulation-with-a-temporally-aware-basis
+header:
+  teaser: papers/placeholder-duck.svg
 excerpt: "A temporally-aware basis for fast subspace fluid simulation."
 date: 2025-07-27
 venue: "SIGGRAPH 2025 / ACM Transactions on Graphics"

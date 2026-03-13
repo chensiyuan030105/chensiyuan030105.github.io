@@ -107,6 +107,36 @@
   }
 }
 
+.archive__item--publication {
+  @include clearfix();
+
+  .archive__item-teaser {
+    margin-bottom: 1rem;
+
+    img {
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+  }
+
+  @include breakpoint($small) {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    .archive__item-teaser {
+      flex: 0 0 220px;
+      margin-bottom: 0;
+    }
+
+    .archive__item-body {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+}
+
 
 /*
    Grid view

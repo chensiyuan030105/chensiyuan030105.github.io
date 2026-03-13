@@ -3,6 +3,8 @@ title: "SG-Splatting: Accelerating 3D Gaussian Splatting with Spherical Gaussian
 collection: publications
 order: 2
 permalink: /publication/sg-splatting
+header:
+  teaser: papers/placeholder-duck.svg
 excerpt: "A method for accelerating 3D Gaussian Splatting with spherical Gaussians."
 date: 2025-01-01
 venue: "ICASSP"
