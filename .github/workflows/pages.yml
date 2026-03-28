@@ -3,7 +3,9 @@ name: Build and Deploy Jekyll site
 on:
   push:
     branches:
+      - master
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
