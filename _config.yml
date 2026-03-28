@@ -2,10 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Caoliwen Wang # the website title (if blank, full name will be used instead)
-first_name: Caoliwen 
+title: Siyuan Chen # the website title (if blank, full name will be used instead)
+first_name: Siyuan
 middle_name: 
-last_name: Wang
+last_name: Chen
 email: wclw1021@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
@@ -120,7 +120,7 @@ plugins:
 
 scholar:
 
-  last_name: Wang
+  last_name: Chen
 
   style: acm-siggraph
   locale: en
