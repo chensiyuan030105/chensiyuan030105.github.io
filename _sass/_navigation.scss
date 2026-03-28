@@ -228,6 +228,11 @@
     a {
       position: relative;
 
+      &.is-active {
+        color: $primary-color;
+        font-weight: 700;
+      }
+
       &:before {
         content: "";
         position: absolute;
@@ -247,6 +252,13 @@
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
                 transform: scaleX(1); /* reveal*/
+      }
+
+      &.is-active:before {
+        background: $primary-color;
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1);
       }
     }
   }

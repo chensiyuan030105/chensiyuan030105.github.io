@@ -3,6 +3,10 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
+      {% assign current_url = page.url | replace: "index.html", "" %}
+      {% if current_url == "" %}
+        {% assign current_url = "/" %}
+      {% endif %}
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
@@ -13,7 +17,17 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            {% assign link_url = link.url | replace: "index.html", "" %}
+            {% if link_url == "" %}
+              {% assign link_url = "/" %}
+            {% endif %}
+            {% assign is_active = false %}
+            {% if current_url == link_url %}
+              {% assign is_active = true %}
+            {% elsif link_url != "/" and current_url contains link_url %}
+              {% assign is_active = true %}
+            {% endif %}
+            <li class="masthead__menu-item"><a {% if is_active %}class="is-active"{% endif %} href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
