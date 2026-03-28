@@ -1,0 +1,33 @@
+name: Build and Deploy Jekyll site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+
+      - name: Clean previous build
+        run: |
+          rm -rf vendor/bundle .bundle _site
+
+      - name: Install dependencies
+        run: bundle install --path vendor/bundle --force
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --config _config.yml --destination ./_site --trace
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site

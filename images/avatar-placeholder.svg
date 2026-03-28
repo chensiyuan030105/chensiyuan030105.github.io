@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
-  <title id="title">Avatar Placeholder</title>
-  <desc id="desc">A neutral placeholder portrait icon.</desc>
-  <rect width="256" height="256" fill="#e2e8f0"/>
-  <circle cx="128" cy="98" r="46" fill="#94a3b8"/>
-  <path d="M56 214c0-40 32-72 72-72s72 32 72 72v14H56v-14z" fill="#94a3b8"/>
-</svg>

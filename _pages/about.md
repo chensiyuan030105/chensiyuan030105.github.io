@@ -1,38 +1,19 @@
 ---
-layout: single
+layout: about
+title: about
 permalink: /
-title: "Siyuan Chen"
-author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
+description: Ph.D. in Computer Science<br><a href="https://www.cs.ubc.ca/">Department of Computer Science</a><br><a href="https://www.ubc.ca/">University of British Columbia</a> 
+
+profile:
+  align: right 
+  image: prof_pic.jpg
+  address:
+
+news: true  # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 ---
+<p style="color:red;">Welcome to you, and also welcome to me!</p>
 
-I am an incoming Ph.D. student in Computer Science at the **University of British Columbia (UBC)**, and currently a Research Assistant at the **University of Hong Kong (HKU)**.
+I'm a first-year CS Ph.D. student at the University of British Columbia, advised by <a href="https://peterchencyc.com/">Prof. Peter Yichen Chen</a>. Currently, my research focuses on computer graphics and how to apply computer graphics and machine learning techniques to scientific discovery.
 
-My work focuses on **computer graphics**, **physics-based simulation**, and **machine learning for scientific discovery**. I am especially interested in methods that preserve physical validity while remaining practical for large-scale computation.
-
-## News
-
-- **2026-01**: One paper accepted to **ICLR 2026**.
-- **2025-09**: Joined **HKU** as a Research Assistant in the Taku Komura Group.
-- **2025-07**: One paper accepted to **SIGGRAPH 2025 / ACM TOG**.
-- **2025-01**: One paper accepted to **ICASSP 2025**.
-
-## Research Interests
-
-- Physics-based simulation
-- Geometry and numerical optimization
-- Computer graphics for scientific problems
-- Scientific machine learning
-
-## Education
-
-- **B.Sc. in Physics**, Shanghai Jiao Tong University, 2021-2025
-- **Exchange Student**, University of Toronto, 2024
-- **Incoming Ph.D. in Computer Science**, University of British Columbia
-
-## Contact
-
-- Email: [gouliguojiashengsiyi@sjtu.edu.cn](mailto:gouliguojiashengsiyi@sjtu.edu.cn)
-- GitHub: [chensiyuan030105](https://github.com/chensiyuan030105)
+I received my B.S. in Computation Mathematics from <a href="http://gcl.ustc.edu.cn/">Graphics & Geometric Computing Lab</a> at <a href="http://gcl.ustc.edu.cn/">University of Science and Technology of China (USTC)</a>, where I was very fortunate to be advised by <a href="http://staff.ustc.edu.cn/~lgliu/">Prof. Ligang Liu</a> and <a href="http://staff.ustc.edu.cn/~juyong/">Prof. Juyong Zhang</a>. I also worked with <a href="http://staff.ustc.edu.cn/~renjiec/">Prof. Renjie Chen</a>, <a href="https://qingfang1208.github.io/">Prof. Qing Fang</a> at USTC and <a href="http://www.bdeng.me/">Prof. Bailin Deng</a> in <a href="https://www.cardiff.ac.uk/computer-science">the School of Computer Science and Informatics</a> at <a href="https://www.cardiff.ac.uk/">Cardiff University</a>.
