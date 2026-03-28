@@ -1,55 +1,38 @@
 ---
-layout: splash
+layout: single
 permalink: /
 title: "Siyuan Chen"
-excerpt: "Physics student at Shanghai Jiao Tong University working on computational physics, computer graphics, and machine learning."
-header:
-  overlay_color: "#1f2937"
-  overlay_filter: 0.15
-  cta_label: "View Projects"
-  cta_url: /projects/
-author_profile: false
+author_profile: true
 redirect_from:
   - /about/
   - /about.html
-feature_row:
-  - title: "Projects"
-    excerpt: "Simulation, graphics, and hands-on technical work."
-    url: /projects/
-    btn_label: "Browse Projects"
-    btn_class: "btn--primary"
-  - title: "Publications"
-    excerpt: "Papers, notes, and research outputs."
-    url: /publications/
-    btn_label: "See Publications"
-    btn_class: "btn--primary"
-  - title: "CV"
-    excerpt: "Education, experience, and selected activities."
-    url: /cv/
-    btn_label: "Open CV"
-    btn_class: "btn--primary"
 ---
 
-Hi, I'm **Siyuan Chen**, a physics student at **Shanghai Jiao Tong University**.
+I am an incoming Ph.D. student in Computer Science at the **University of British Columbia (UBC)**, and currently a Research Assistant at the **University of Hong Kong (HKU)**.
 
-I am interested in **computational physics**, **computer graphics**, and **machine learning**, especially methods that connect physical principles with practical simulation and modeling.
+My work focuses on **computer graphics**, **physics-based simulation**, and **machine learning for scientific discovery**. I am especially interested in methods that preserve physical validity while remaining practical for large-scale computation.
 
-### Research Interests
+## News
+
+- **2026-01**: One paper accepted to **ICLR 2026**.
+- **2025-09**: Joined **HKU** as a Research Assistant in the Taku Komura Group.
+- **2025-07**: One paper accepted to **SIGGRAPH 2025 / ACM TOG**.
+- **2025-01**: One paper accepted to **ICASSP 2025**.
+
+## Research Interests
 
 - Physics-based simulation
-- Numerical methods for real-world motion
-- Computer graphics and scientific computing
-- Machine learning for physical systems
+- Geometry and numerical optimization
+- Computer graphics for scientific problems
+- Scientific machine learning
 
-### What You'll Find Here
+## Education
 
-- Ongoing projects and technical experiments
-- Publications and research-related writing
-- A short CV and contact information
+- **B.Sc. in Physics**, Shanghai Jiao Tong University, 2021-2025
+- **Exchange Student**, University of Toronto, 2024
+- **Incoming Ph.D. in Computer Science**, University of British Columbia
 
-### Contact
+## Contact
 
 - Email: [gouliguojiashengsiyi@sjtu.edu.cn](mailto:gouliguojiashengsiyi@sjtu.edu.cn)
 - GitHub: [chensiyuan030105](https://github.com/chensiyuan030105)
-
-{% include feature_row %}

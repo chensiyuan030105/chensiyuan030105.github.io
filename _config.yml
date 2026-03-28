@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Siyuan Chen"
 title_separator          : "-"
 name                     : &name "Siyuan Chen"
-description              : &description "Physics student exploring computational physics, computer graphics, and machine learning."
+description              : &description "Incoming Ph.D. student in Computer Science at UBC, working on computer graphics, simulation, and scientific machine learning."
 url                      : https://chensiyuan030105.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chensiyuan030105/chensiyuan030105.github.io"
@@ -21,12 +21,12 @@ repository               : "chensiyuan030105/chensiyuan030105.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "avatar-placeholder.svg"
   name             : "Siyuan Chen"
   pronouns         : # example: "she/her"  
-  bio              : "Physics student working on computational physics and simulation."
+  bio              : "Incoming Ph.D. student at UBC. I work on graphics, simulation, and ML for scientific discovery."
   location         : "Shanghai, China"
-  employer         : "Shanghai Jiao Tong University"
+  employer         : "The University of Hong Kong / The University of British Columbia"
   uri              : # URL
   email            : "gouliguojiashengsiyi@sjtu.edu.cn" 
 
@@ -91,7 +91,7 @@ project_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false #change to true to add link to talkmap on talks page
 comments:
@@ -305,7 +305,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

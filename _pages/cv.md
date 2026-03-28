@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "CV"
 permalink: /cv/
 author_profile: true
@@ -7,28 +7,26 @@ redirect_from:
   - /resume
 ---
 
-Education
-======
+## Education
 
-* **Shanghai Jiao Tong University**, B.Sc. in Physics, September 2021 - June 2025
-* **University of Toronto**, Exchange Student, September 2024 - December 2024
+- **Shanghai Jiao Tong University**, B.Sc. in Physics, Sep 2021 - Jun 2025
+- **University of Toronto**, Exchange Student, Sep 2024 - Dec 2024
+- **University of British Columbia**, Incoming Ph.D. student in Computer Science
 
-Current Status
-======
+## Research Experience
 
-* **The University of British Columbia**, Incoming Ph.D. Student
+- **The University of Hong Kong**, Research Assistant, Sep 2025 - Present  
+  Taku Komura Group, AI, Robotics and Visual Computing, School of Computing and Data Science
 
-Research Experience
-======
+## Research Interests
 
-* **The University of Hong Kong**, Research Assistant, September 2025 - Present
-  * Taku Komura Group, **AI, Robotics and Visual Computing**, School of Computing and Data Science
-  * Advisor: **Professor Taku Komura**
+- Computer graphics
+- Physics-based simulation
+- Numerical methods
+- Machine learning for scientific discovery
 
-Research Interests
-======
+## Links
 
-* Computational physics
-* Computer graphics
-* Machine learning
-* Physics-based simulation
+- Publications: [/publications/](/publications/)
+- Projects: [/projects/](/projects/)
+- GitHub: [https://github.com/chensiyuan030105](https://github.com/chensiyuan030105)

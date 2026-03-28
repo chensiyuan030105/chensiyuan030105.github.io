@@ -1,6 +1,6 @@
 ---
-title: "Fluid simulation by SPH "
-collection: simulation method learning
+title: "Fluid Simulation by SPH"
+collection: projects
 category: fluid-simulation
 permalink: /project/project_1
 excerpt: 'This project aims to simulate fluids using SPH (Smoothed Particle Hydrodynamics).'

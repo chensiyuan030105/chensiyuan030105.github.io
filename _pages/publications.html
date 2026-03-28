@@ -1,20 +1,32 @@
 ---
-layout: archive
+layout: single
 title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+{% assign pubs = site.publications | sort: "date" | reverse %}
+{% assign current_year = "" %}
 
-{% include base_path %}
+{% for post in pubs %}
+  {% assign year = post.date | date: "%Y" %}
+  {% if year != current_year %}
+    {% unless forloop.first %}</ol>{% endunless %}
+<h2>{{ year }}</h2>
+<ol>
+    {% assign current_year = year %}
+  {% endif %}
 
-{% assign ordered_publications = site.publications | sort: "order" %}
-{% for post in ordered_publications %}
-  {% include archive-single.html %}
+<li>
+  <strong>{{ post.title }}</strong><br />
+  {% if post.venue %}<em>{{ post.venue }}</em>, {{ year }}.{% else %}{{ year }}.{% endif %}<br />
+  {% if post.excerpt %}{{ post.excerpt }}<br />{% endif %}
+  <a href="{{ post.url | relative_url }}">Details</a>{% if post.paperurl %} · <a href="{{ post.paperurl }}">PDF</a>{% endif %}
+</li>
 {% endfor %}
 
-
-
+{% if pubs.size > 0 %}
+</ol>
+{% else %}
+<p>No publications yet.</p>
+{% endif %}
