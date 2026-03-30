@@ -18,4 +18,4 @@ I'm a first-year CS Ph.D. student at the University of British Columbia, advised
 
 I graduated from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> with a B.S. degree in Physics.
 
-Before starting my Ph.D., I interned at SJTU DA Lab, where I worked with Prof. Xubo Yang and Ph.D. student Hui Wang, and also collaborated remotely with Bo Zhu. I also worked at DMCV with Prof. Ran Yi. From September 2024 to December 2024, I was an exchange student at the University of Toronto, where I worked with Zhecheng and Eitan Grinspun.
+Before starting my Ph.D., I interned at SJTU DA Lab, where I worked with Prof. Xubo Yang and Ph.D. student Hui Wang, and also collaborated remotely with Bo Zhu. I also worked at DMCV with Prof. Ran Yi. From September 2024 to December 2024, I was an exchange student at the University of Toronto, where I worked with Zhecheng and Prof. Eitan Grinspun.
