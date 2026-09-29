@@ -22,7 +22,9 @@
     {% else %}
     <a href="{{ entry.pdf }}">
     {% endif %}
-    <img src="/assets/img/publication/thumbnail/{{ entry.thumbnail }}" class="img-responsive publication-img" alt="">
+    {% if entry.thumbnail %}
+    <img src="{{ '/assets/img/publication/thumbnail/' | append: entry.thumbnail | relative_url }}" class="img-responsive publication-img" alt="">
+    {% endif %}
     </a>
   </div>
 
@@ -40,37 +42,37 @@
       {% else %}
             <div class="title"><a href="{{entry.pdf}}">{{entry.title}}</a></div>
       {% endif %}
+      {% assign equal_contrib_names = entry.equal_contrib | default: '' | split: ' and ' %}
+      {% assign corresponding_names = entry.corresponding | default: '' | split: ' and ' %}
+      {% assign site_author_name = site.first_name | append: ' ' | append: site.last_name | strip %}
       <div class="author">
         {% for author in entry.author_array %}
-          {% if forloop.length == 1 %}
-            {% if author.last == site.scholar.last_name %}
-              <em>{{author.first}} {{author.last}}</em>
-            {% else %}
-              {{author.first}} {{author.last}}
+          {% assign author_name = author.first | append: ' ' | append: author.last | strip %}
+          {% assign author_key = author.last | append: ', ' | append: author.first | strip %}
+          {% assign author_is_equal = false %}
+          {% assign author_is_corresponding = false %}
+          {% for equal_name in equal_contrib_names %}
+            {% assign equal_name_clean = equal_name | strip %}
+            {% if equal_name_clean == author_key %}
+              {% assign author_is_equal = true %}
             {% endif %}
+          {% endfor %}
+          {% for corresponding_name in corresponding_names %}
+            {% assign corresponding_name_clean = corresponding_name | strip %}
+            {% if corresponding_name_clean == author_key %}
+              {% assign author_is_corresponding = true %}
+            {% endif %}
+          {% endfor %}
+          {% unless forloop.first %}, {% endunless %}
+          {% if author_name == site_author_name %}
+            <em>{{ author_name }}</em>
+          {% elsif site.data.coauthors[author.last] %}
+            <a href="{{ site.data.coauthors[author.last].url }}" target="_blank">{{ author_name }}</a>
           {% else %}
-            {% unless forloop.last %}
-              {% if author.last == site.scholar.last_name %}
-                <em>{{author.first}} {{author.last}}</em>,
-              {% else %}
-                {% if site.data.coauthors[author.last] %}
-                  <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.first}} {{author.last}}</a>,
-                {% else %}
-                  {{author.first}} {{author.last}},
-                {% endif %}
-              {% endif %}
-            {% else %}
-              {% if author.last == site.scholar.last_name %}
-                <em>{{author.first}} {{author.last}}</em>
-              {% else %}
-                {% if site.data.coauthors[author.last] %}
-                  <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.first}} {{author.last}}</a>
-                {% else %}
-                  {{author.first}} {{author.last}}
-                {% endif %}
-              {% endif %}
-            {% endunless %}
+            {{ author_name }}
           {% endif %}
+          {% if author_is_equal %}<sup>*</sup>{% endif %}
+          {% if author_is_corresponding %}<sup>†</sup>{% endif %}
         {% endfor %}
       </div>
 
@@ -88,6 +90,13 @@
       {% endif %}
 
       </div>
+
+      {% if entry.equal_contrib or entry.corresponding %}
+      <div class="contribution">
+        {% if entry.equal_contrib %}<span><sup>*</sup> Co-first authors.</span>{% endif %}
+        {% if entry.corresponding %}<span><sup>†</sup> Corresponding author{% if corresponding_names.size > 1 %}s{% endif %}.</span>{% endif %}
+      </div>
+      {% endif %}
     {% endif %}
 
     <div class="links">

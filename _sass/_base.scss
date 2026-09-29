@@ -379,15 +379,22 @@ ul.list-inline {
       }
       .author {
         a {
-          border-bottom: 1px dashed var(--global-theme-color);
           &:hover {
-              border-bottom-style: solid;
               text-decoration: none;
           }
         }
         > em {
-          border-bottom: 1px solid;
           font-style: normal;
+          font-weight: 500;
+        }
+      }
+      .contribution {
+        color: var(--global-text-color-light);
+        font-size: 0.85rem;
+        margin-top: 0.2rem;
+
+        span + span {
+          margin-left: 0.75rem;
         }
       }
       .links {
