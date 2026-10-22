@@ -44,11 +44,37 @@ document.querySelectorAll('[data-demo-filter]').forEach(button => button.addEven
   document.querySelector('.section-heading>span').textContent = `${count} project${count === 1 ? '' : 's'}`;
 }));
 const demoDialog = document.querySelector('#demo-dialog');
+const reducedMediaMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const visiblePreviews = new Set();
+function syncVideoPreviews() {
+  document.querySelectorAll('video[data-preview-video]').forEach(video => {
+    if (visiblePreviews.has(video) && !demoDialog?.open && !document.hidden && !reducedMediaMotion.matches) {
+      const source = video.querySelector('source');
+      if (!source.hasAttribute('src')) { source.src = source.dataset.src; video.load(); }
+      video.muted = true;
+      video.play().catch(() => { /* The poster remains visible when autoplay is unavailable. */ });
+    } else video.pause();
+  });
+}
+const previewObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) visiblePreviews.add(entry.target); else visiblePreviews.delete(entry.target); });
+  syncVideoPreviews();
+}, { threshold: .15 });
+document.querySelectorAll('video[data-preview-video]').forEach(video => previewObserver.observe(video));
+document.addEventListener('visibilitychange', syncVideoPreviews);
+reducedMediaMotion.addEventListener('change', syncVideoPreviews);
 document.querySelectorAll('[data-open-demo]').forEach(button => button.addEventListener('click', () => {
   const content = document.querySelector('#demo-dialog-content');
   content.replaceChildren(document.querySelector(`#demo-${button.dataset.openDemo}`).content.cloneNode(true));
   content.querySelector('h2').id = 'modal-title';
   demoDialog.showModal();
+  syncVideoPreviews();
+  const video = content.querySelector('video');
+  if (video) { video.muted = true; video.play().catch(() => { /* Native controls provide a manual play action. */ }); }
 }));
+demoDialog?.addEventListener('close', () => {
+  demoDialog.querySelectorAll('video').forEach(video => video.pause());
+  syncVideoPreviews();
+});
 document.querySelector('.modal-close')?.addEventListener('click', () => demoDialog.close());
 demoDialog?.addEventListener('click', e => { if (e.target === demoDialog) { const box = demoDialog.getBoundingClientRect(); if (e.clientX < box.left || e.clientX > box.right || e.clientY < box.top || e.clientY > box.bottom) demoDialog.close(); } });

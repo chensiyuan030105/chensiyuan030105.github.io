@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { Liquid } from 'liquidjs';
 import YAML from 'yaml';
 import { parseBibliography } from './bibliography.mjs';
@@ -8,6 +9,7 @@ import { parseBibliography } from './bibliography.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = path.join(root, '_site');
 const read = file => readFile(path.join(root, file), 'utf8');
+const assetVersion = createHash('sha256').update(await read('assets/studio/studio.css')).update(await read('assets/studio/site.js')).digest('hex').slice(0, 12);
 const engine = new Liquid({ root: path.join(root, 'studio'), extname: '.html', strictFilters: true });
 engine.registerFilter('escape', value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])));
 engine.registerFilter('month', date => new Date(date).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' }));
@@ -21,6 +23,10 @@ const papers = parseBibliography(bibliography).map(entry => {
 }).sort((a, b) => Number(b.year) - Number(a.year));
 const news = YAML.parse(await read('_data/news.yml'));
 const demos = YAML.parse(await read('_data/demos.yml'));
+for (const paper of papers) {
+  const demo = demos.find(demo => demo.paper_id === paper.id && demo.video);
+  if (demo) Object.assign(paper, { preview_video: demo.video, preview_poster: demo.poster });
+}
 const pages = [
   { template: 'home', slug: '', title: 'Siyuan Chen — AI & Physical Computing', description: 'Siyuan Chen. PhD student at UBC, exploring AI for biomolecular and physical dynamics.' },
   { template: 'publications', slug: 'publications', title: 'Publications — Siyuan Chen', description: 'Research in biomolecular modeling, neural simulation, and visual computing.' },
@@ -36,7 +42,7 @@ for (const file of ['three.module.min.js', 'three.core.min.js']) {
 }
 await cp(path.join(root, 'node_modules/three/LICENSE'), path.join(out, 'assets/vendor/THREE-LICENSE.txt'));
 for (const page of pages) {
-  const data = { page, papers, years: [...new Set(papers.map(p => p.year))], news, demos };
+  const data = { page, papers, years: [...new Set(papers.map(p => p.year))], news, demos, asset_version: assetVersion };
   const content = await engine.renderFile(page.template, data);
   const html = await engine.renderFile('layout', { ...data, content });
   const target = path.join(out, page.slug);

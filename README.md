@@ -41,8 +41,11 @@ a topology-preserving physical untangling simulation. Mouse movement changes the
 viewpoint. Light/dark theme is remembered locally.
 
 The Demos page includes a working knot experiment (drag, winding, speed, pause,
-reset) and six previews using the actual research GIFs. These GIFs are recorded
-results, distinct from the browser's live geometry experiment. Dialogs support
+reset) and eight research previews. Four use H.264 MP4 with looping, silent,
+inline playback; other previews retain the original research GIFs. Video cards
+load only while visible, pause offscreen, and respect reduced-motion preferences.
+Expanded videos have native playback/seeking controls and a download link.
+These are recorded results, distinct from the browser's live geometry experiment. Dialogs support
 Escape, focus trapping, and return focus. Reduced-motion preferences disable
 automatic rotation and the traveling highlight; explicit controls still work.
 
@@ -50,5 +53,18 @@ automatic rotation and the traveling highlight; explicit controls still work.
 
 MIT, with legacy portions from David Lindell and al-folio. Original license
 retained in `LICENSE`. Three.js's MIT license is copied into the output at
-`assets/vendor/THREE-LICENSE.txt`. Michroma is distributed under the SIL Open
-Font License in `assets/studio/fonts/OFL-Michroma.txt`.
+`assets/vendor/THREE-LICENSE.txt`. All webpage typography uses locally served
+Linux Biolinum (regular, bold, italic), converted from the OpenType originals
+in TeX Live's Libertine package. Its license and GPL font exception are retained
+in `assets/studio/fonts/LinuxBiolinum-LICENCE.txt` and `LinuxBiolinum-GPL.txt`.
+
+## Video sources
+
+- Subspace Fluids: `3MtPZ-papers_179s2-yaml8_video.mp4`, 01:00–01:07, Ground Truth/DMD comparison.
+- Efficient Open-Boundary Poisson Solves: `haQua-papers_1946s2-yaml7_video.mp4`, 00:31–00:44, ferrofluid comparison.
+- From Surfaces to Volumes: `ligand_classification.gif`, full 8.5-second animation.
+- Gauss–Seidel: all 144 frames of `ICLR2026gsproj.gif`, normalized to 24 fps (6 seconds). The original GIF has no repeat extension, so video loop playback fixes its stopped preview.
+
+MP4s are silent, use broadly supported H.264/yuv420p, and have their metadata at
+the front for quick playback. Source videos were not uploaded in full. Posters
+are representative frames from the same source clips.

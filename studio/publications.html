@@ -10,7 +10,7 @@
     {% for paper in papers %}{% if paper.year == year %}
     <article class="paper" id="{{ paper.id }}" data-category="{{ paper.category }}">
       <a class="paper-image" {% if paper.link != '' %}href="{{ paper.link }}"{% endif %} aria-label="{{ paper.title | escape }}">
-        {% if paper.thumbnail %}<img src="/assets/img/publication/thumbnail/{{ paper.thumbnail }}" alt="Visual result from {{ paper.title | escape }}" loading="lazy" width="360" height="240">{% else %}<div class="paper-placeholder" aria-hidden="true"><span>Σ</span><small>GEOMETRY × LEARNING</small></div>{% endif %}
+        {% if paper.preview_video %}<video aria-hidden="true" data-preview-video loop muted playsinline preload="none" poster="{{ paper.preview_poster }}" aria-label="Visual result from {{ paper.title | escape }}"><source data-src="{{ paper.preview_video }}" type="video/mp4"></video>{% elsif paper.thumbnail %}<img src="/assets/img/publication/thumbnail/{{ paper.thumbnail }}" alt="Visual result from {{ paper.title | escape }}" loading="lazy" width="360" height="240">{% else %}<div class="paper-placeholder" aria-hidden="true"><span>Σ</span><small>GEOMETRY × LEARNING</small></div>{% endif %}
       </a>
       <div class="paper-body"><p class="paper-venue">{{ paper.venue | escape }} · {{ paper.year }}</p>
         <h3>{% if paper.link != '' %}<a href="{{ paper.link }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h3>
