@@ -28,10 +28,10 @@ for (const paper of papers) {
   if (demo) Object.assign(paper, { preview_video: demo.video, preview_poster: demo.poster });
 }
 const pages = [
-  { template: 'home', slug: '', title: 'Siyuan Chen — AI & Physical Computing', description: 'Siyuan Chen. PhD student at UBC, exploring AI for biomolecular and physical dynamics.' },
+  { template: 'home', slug: '', title: 'Siyuan Chen — AI & Physical Computing', description: 'Siyuan Chen. PhD student at UBC, exploring computer graphics, physical simulation, and machine learning.' },
   { template: 'publications', slug: 'publications', title: 'Publications — Siyuan Chen', description: 'Research in biomolecular modeling, neural simulation, and visual computing.' },
   { template: 'demos', slug: 'demos', title: 'Demos — Siyuan Chen', description: 'Interactive experiments and research demonstrations in physics, geometry, and learning.' },
-  { template: 'about', slug: 'about', title: 'About — Siyuan Chen', description: 'About Siyuan Chen, a Computer Science PhD student at the University of British Columbia.' }
+  { template: 'about', slug: 'about', title: 'About — Siyuan Chen', description: 'Siyuan Chen, a CS PhD student at UBC working on computer graphics, physical simulation, and machine learning.' }
 ];
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
