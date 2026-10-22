@@ -1,0 +1,26 @@
+<main id="main" class="shell content-page publications-page">
+  <div class="page-heading"><h1 class="page-title">Publications</h1><p>Geometry, learning, and physical dynamics.</p></div>
+  <div class="publication-tools">
+    <div class="filter-group" aria-label="Filter publications">{% assign categories = 'All,Biomolecular,Simulation,Visual computing' | split: ',' %}{% for category in categories %}<button class="filter-button" data-filter="{{ category }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ category }}</button>{% endfor %}</div>
+    <label class="search-label"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="m12 12 5 5"/></svg><input id="paper-search" type="search" placeholder="Search papers" aria-label="Search publications"></label>
+  </div>
+  <p class="publication-count" aria-live="polite">{{ papers.size }} publications</p>
+  {% for year in years %}
+  <section class="publication-year" data-year="{{ year }}"><h2 class="year-label">{{ year }}</h2>
+    {% for paper in papers %}{% if paper.year == year %}
+    <article class="paper" id="{{ paper.id }}" data-category="{{ paper.category }}">
+      <a class="paper-image" {% if paper.link != '' %}href="{{ paper.link }}"{% endif %} aria-label="{{ paper.title | escape }}">
+        {% if paper.thumbnail %}<img src="/assets/img/publication/thumbnail/{{ paper.thumbnail }}" alt="Visual result from {{ paper.title | escape }}" loading="lazy" width="360" height="240">{% else %}<div class="paper-placeholder" aria-hidden="true"><span>Σ</span><small>GEOMETRY × LEARNING</small></div>{% endif %}
+      </a>
+      <div class="paper-body"><p class="paper-venue">{{ paper.venue | escape }} · {{ paper.year }}</p>
+        <h3>{% if paper.link != '' %}<a href="{{ paper.link }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h3>
+        <p class="paper-authors">{% for author in paper.authors %}{% if author == 'Siyuan Chen' %}<strong>{{ author }}</strong>{% else %}{{ author | escape }}{% endif %}{% if paper.equal contains author %}<sup>*</sup>{% endif %}{% if paper.corresponding contains author %}<sup>†</sup>{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+        <div class="paper-links">{% if paper.pdf %}<a href="{{ paper.pdf }}">Paper ↗</a>{% endif %}{% if paper.html %}<a href="{{ paper.html }}">Publication ↗</a>{% endif %}{% if paper.website %}<a href="{{ paper.website }}">Project ↗</a>{% endif %}{% if paper.code %}<a href="{{ paper.code }}">Code ↗</a>{% endif %}{% if paper.video %}<a href="{{ paper.video }}">Video ↗</a>{% endif %}</div>
+      </div>
+    </article>
+    {% endif %}{% endfor %}
+  </section>
+  {% endfor %}
+  <p id="no-papers" class="empty-state" hidden>No publications match your search. Try another title, author, or keyword.</p>
+  <p class="contribution-key">* Equal contribution &nbsp; † Corresponding author</p>
+</main>

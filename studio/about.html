@@ -1,0 +1,22 @@
+<main id="main" class="shell content-page about-page">
+  <h1 class="page-title">About</h1>
+  <div class="about-grid">
+    <aside class="about-profile">
+      <img class="portrait" src="/assets/img/prof_pic.jpg" width="160" height="160" alt="Mountain landscape from Siyuan's profile">
+      <h2>Siyuan Chen</h2>
+      <p class="affiliation">Computer Science PhD<br>University of British Columbia</p>
+      <dl class="contact-list"><dt>Email</dt><dd><a href="mailto:chensiyuan030105@gmail.com">chensiyuan030105<br>@gmail.com</a></dd><dt>Elsewhere</dt><dd class="profile-links"><a href="/assets/pdf/cv.pdf">CV ↗</a><a href="https://github.com/chensiyuan030105">GitHub ↗</a></dd></dl>
+    </aside>
+    <div class="about-body">
+      <p class="section-label">Research</p>
+      <h2>Learning the dynamics<br>of the physical world.</h2>
+      <p>I'm a CS Ph.D. student at the <a href="https://www.ubc.ca/">University of British Columbia</a>, advised by <a href="https://peterchencyc.com/">Prof. Peter Yichen Chen</a>.</p>
+      <p>My research develops <strong>AI foundation models for protein structure, interaction, and dynamics</strong>, combining geometric deep learning, physics-grounded priors, and large-scale molecular dynamics data.</p>
+      <p>I'm particularly interested in physically valid biomolecular generation, scalable protein–protein interaction discovery, and Transformer-based neural simulators that learn protein conformational dynamics from MD trajectories. More broadly, I work on neural surrogate models for physical dynamics, at the intersection of computer graphics, scientific computing, and machine learning.</p>
+      <p>I graduated from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> with a B.S. in Physics and a minor in Computer Science.</p>
+      <p>Before my Ph.D., I interned at SJTU DA Lab with Prof. Xubo Yang and Hui Wang, collaborated remotely with Bo Zhu, and worked at DMCV with Prof. Ran Yi. In fall 2024, I was an exchange student at the University of Toronto, working with Zhecheng Wang and Prof. Eitan Grinspun.</p>
+      <div class="about-cta"><a href="/publications/">View publications ↗</a><a href="/demos/">Explore demos ↗</a></div>
+      <section class="news-section"><h2>Recently</h2><ul class="news-list">{% for item in news limit: 6 %}<li><time>{{ item.date | month }}</time><span>{{ item.content }}</span></li>{% endfor %}</ul></section>
+    </div>
+  </div>
+</main>

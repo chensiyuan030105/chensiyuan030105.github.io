@@ -1,0 +1,22 @@
+{
+  "name": "siyuan-chen-homepage",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Siyuan Chen's interactive academic portfolio",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "liquidjs": "^10.30.0",
+    "three": "0.180.0",
+    "yaml": "^2.9.1"
+  }
+}

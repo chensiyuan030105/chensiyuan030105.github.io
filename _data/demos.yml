@@ -1,0 +1,44 @@
+- id: worldparticle
+  title: WorldParticle
+  type: Simulation
+  venue: SIGGRAPH Asia 2026
+  image: SIGA2026worldparticle.gif
+  description: Unified world simulation of Lagrangian particle dynamics via Transformer.
+  paper: https://arxiv.org/abs/2605.15305
+  project: https://worldparticle.github.io/WorldParticle_Web/
+- id: gsprojection
+  title: Gauss–Seidel Projection
+  type: Biomolecular
+  venue: ICLR 2026
+  image: ICLR2026gsproj.gif
+  description: Physically valid biomolecular interaction modeling with differentiable projection.
+  paper: https://arxiv.org/abs/2510.08946
+- id: closing-trajectories
+  title: Closing Trajectories
+  type: Simulation
+  venue: SCA 2026
+  image: closing-trajectories.gif
+  description: Equation-free cyclic animation via Koopman surrogates.
+  paper: https://arxiv.org/abs/2605.23462
+- id: subspace-fluids
+  title: Subspace Fluid Simulation
+  type: Simulation
+  venue: SIGGRAPH 2025
+  image: 2025sfs.gif
+  description: Fast fluid simulation with an online temporally-aware reduced basis.
+  paper: https://arxiv.org/abs/2502.05339
+  project: https://www.dgp.toronto.edu/projects/dmd/
+- id: worldagent
+  title: WorldAgent
+  type: Simulation
+  venue: Preprint · 2026
+  image: 2026worldagent.gif
+  description: Verification-guided agentic construction of physical worlds.
+  paper: https://arxiv.org/abs/2609.33208
+- id: worldcontact
+  title: WorldContact
+  type: Simulation
+  venue: Preprint · 2026
+  image: 2026worldcontact.gif
+  description: A contact-centric world model for scalable robot learning.
+  paper: https://arxiv.org/abs/2609.19600

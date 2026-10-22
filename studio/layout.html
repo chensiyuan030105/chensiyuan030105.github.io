@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://chensiyuan030105.github.io/assets/img/prof_pic.jpg">
+  <link rel="canonical" href="https://chensiyuan030105.github.io/{{ page.slug }}{% if page.slug != '' %}/{% endif %}">
+  <title>{{ page.title | escape }}</title>
+  <link rel="icon" href="/assets/studio/mark.svg" type="image/svg+xml">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('siyuan-theme')==='light'?'light':'dark'}catch{}</script>
+  <link rel="stylesheet" href="/assets/studio/studio.css">
+  <script type="module" src="/assets/studio/site.js"></script>
+</head>
+<body class="page-{{ page.template }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell">
+    {% if page.template != 'home' %}<a class="wordmark" href="/" aria-label="Siyuan Chen — Home">SC<span class="wordmark-dot">.</span></a>{% else %}<span></span>{% endif %}
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="/publications/" {% if page.template == 'publications' %}aria-current="page"{% endif %}>Publications</a>
+      <a href="/demos/" {% if page.template == 'demos' %}aria-current="page"{% endif %}>Demos<span class="nav-spark" aria-hidden="true"></span></a>
+      <a href="/about/" {% if page.template == 'about' %}aria-current="page"{% endif %}>About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle icon-button" aria-label="Switch to light theme" title="Change color theme">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.7 8.7 0 0 1 9.8 3.5 8.8 8.8 0 1 0 20.5 14.2Z" fill="currentColor"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="menu-toggle icon-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    </div>
+  </header>
+  <dialog id="mobile-menu" class="mobile-menu" aria-label="Site navigation">
+    <button class="menu-close icon-button" aria-label="Close menu">×</button>
+    <nav><a href="/">Home</a><a href="/publications/">Publications</a><a href="/demos/">Demos</a><a href="/about/">About</a></nav>
+    <p>Siyuan Chen · UBC</p>
+  </dialog>
+  {{ content }}
+  {% if page.template != 'home' %}
+  <footer class="site-footer shell"><span>© {{ 'now' | date: '%Y' }} Siyuan Chen</span><a href="mailto:chensiyuan030105@gmail.com">Get in touch ↗</a><a href="https://github.com/chensiyuan030105">GitHub ↗</a></footer>
+  {% endif %}
+</body>
+</html>
