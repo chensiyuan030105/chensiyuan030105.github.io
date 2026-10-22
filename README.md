@@ -22,6 +22,7 @@ routes, links, images, bibliography completeness, and JavaScript syntax.
 
 - `studio/`: page templates and shared layout. The routes are `/`, `/publications/`, `/demos/`, and `/about/`.
 - `_bibliography/papers.bib`: the original bibliography, still the source of all publications.
+- `_data/thumbnail_sources.yml`: source PDF pages and figure selections for the cropped paper thumbnails (all from pages after the first).
 - `_data/news.yml`: the original news feed, shown on About.
 - `_data/demos.yml`: research demos. Add a thumbnail filename, description, paper URL, and optional project URL here.
 - `assets/studio/`: styles and browser modules. `knot.js` implements the interactive geometry and material.

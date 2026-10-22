@@ -1,0 +1,19 @@
+# PDF page numbers are one-based. These are figure crops, never page screenshots.
+- paper_id: wang2026sgsplatting
+  image: sg-splatting-fig5.jpg
+  source: https://arxiv.org/pdf/2501.00342
+  page: 7
+  figure: 5
+  selection: First two scene rows, Ground Truth / Ours / 3D-GS columns of the qualitative comparison.
+- paper_id: liu2025muonbeamline
+  image: muon-beamline-fig11.png
+  source: https://arxiv.org/pdf/2503.01597
+  page: 18
+  figure: 11
+  selection: Surface muon beamline layout, including the copper target and experimental area.
+- paper_id: chen2023plasticine3d
+  image: plasticine3d-fig7.png
+  source: https://arxiv.org/pdf/2312.10111
+  page: 15
+  figure: 7
+  selection: First two rows of editing examples, retaining original/result pairs and their prompts.
