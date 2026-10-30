@@ -1,0 +1,25 @@
+<main id="main" class="shell content-page demos-page">
+  <div class="page-heading"><p class="section-label">The playground</p><h1 class="page-title">Ideas, in motion.</h1><p>Interactive experiments and a closer look at my research.</p></div>
+  <section class="experiment" aria-labelledby="experiment-title">
+    <div class="experiment-topline"><span class="live-label"><i></i> LIVE EXPERIMENT</span><span class="experiment-number">001 / PIGMENT FLOW</span></div>
+    <div class="experiment-view" id="demo-scene" aria-label="Interactive pigment fluid. Drag to paint, or focus and use arrow keys to move and Space to inject pigment." tabindex="0"></div>
+    <div class="experiment-caption"><div><h2 id="experiment-title">A little turbulence.</h2><p>Drag to pour color. Stir the current. Watch the pigments mingle.</p><span class="illustration-note">A browser adaptation of <a href="https://github.com/taichi-dev/taichi/blob/master/python/taichi/examples/simulation/stable_fluid.py" target="_blank" rel="noopener">Taichi’s Stable Fluids experiment ↗</a>.</span></div><button id="demo-pause" class="text-button" aria-pressed="false">Pause motion</button></div>
+    <div class="experiment-controls pigment-controls"><label for="paint-radius">Brush size <output id="radius-value" for="paint-radius">18</output><input id="paint-radius" type="range" min="5" max="40" value="18"></label><label for="paint-swirl">Vorticity <output id="swirl-value" for="paint-swirl">20</output><input id="paint-swirl" type="range" min="0" max="40" value="20"></label><label class="pigment-color" for="paint-color">Pigment<input id="paint-color" type="color" value="#27d9d0"></label><button id="demo-reset" class="outline-button">Reset ↺</button></div>
+    <p id="demo-fallback" hidden>Your browser could not start the pigment experiment. The research demos below are still available.</p>
+  </section>
+  <section class="research-demos" aria-labelledby="research-title">
+    <div class="section-heading"><h2 id="research-title">Research demos</h2><span>{{ demos.size }} projects</span></div>
+    <p class="section-intro">Results from the projects below, in motion. Open a preview to play, pause, and explore.</p>
+    <div class="filter-group demo-filters" aria-label="Filter demos"><button class="filter-button" data-demo-filter="All" aria-pressed="true">All</button><button class="filter-button" data-demo-filter="Simulation" aria-pressed="false">Simulation</button><button class="filter-button" data-demo-filter="Biomolecular" aria-pressed="false">Biomolecular</button></div>
+    <div class="demo-grid">
+      {% for demo in demos %}<article class="demo-card" data-type="{{ demo.type }}">
+        <button class="demo-preview" data-open-demo="{{ demo.id }}" aria-label="Preview {{ demo.title }}">{% if demo.video %}<video aria-hidden="true" data-preview-video loop muted playsinline preload="none" poster="{{ demo.poster }}" aria-label="{{ demo.title }} animated research result"><source data-src="{{ demo.video }}" type="video/mp4"></video>{% else %}<img src="/assets/img/publication/thumbnail/{{ demo.image }}" width="560" height="340" alt="{{ demo.title }} animated research result" loading="lazy">{% endif %}<span class="preview-arrow" aria-hidden="true">{% if demo.video %}▷{% else %}↗{% endif %}</span></button>
+        <div class="demo-card-meta"><span>{{ demo.type }}</span><span>{{ demo.venue }}</span></div><h3><button data-open-demo="{{ demo.id }}">{{ demo.title }}</button></h3><p>{{ demo.description }}</p>
+        <div class="paper-links"><button class="text-button" data-open-demo="{{ demo.id }}">View demo ↗</button>{% if demo.project %}<a href="{{ demo.project }}">Project ↗</a>{% endif %}{% if demo.paper %}<a href="{{ demo.paper }}">Paper ↗</a>{% endif %}</div>
+        <template id="demo-{{ demo.id }}">{% if demo.video %}<video class="modal-demo-image" controls loop muted playsinline preload="metadata" poster="{{ demo.poster }}" aria-label="{{ demo.title }} video"><source src="{{ demo.video }}" type="video/mp4">Your browser does not support inline video.</video>{% else %}<img class="modal-demo-image" src="/assets/img/publication/thumbnail/{{ demo.image }}" alt="{{ demo.title }} animated result">{% endif %}<p class="section-label">{{ demo.venue }}</p><h2>{{ demo.title }}</h2><p>{{ demo.description }}</p><div class="paper-links">{% if demo.project %}<a href="{{ demo.project }}">Project website ↗</a>{% endif %}{% if demo.paper %}<a href="{{ demo.paper }}">Read paper ↗</a>{% endif %}{% if demo.video %}<a href="{{ demo.video }}" download>Download video ↓</a>{% endif %}</div></template>
+      </article>{% endfor %}
+    </div>
+  </section>
+  <dialog id="demo-dialog" class="demo-dialog" aria-labelledby="modal-title"><button class="modal-close icon-button" aria-label="Close demo">×</button><div id="demo-dialog-content"></div></dialog>
+</main>
+<script type="module" src="/assets/studio/demos.js?v={{ asset_version }}"></script>

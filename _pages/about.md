@@ -1,0 +1,23 @@
+---
+layout: about
+title: about
+permalink: /
+description: Ph.D. in Computer Science<br><a href="https://www.cs.ubc.ca/">Department of Computer Science</a><br><a href="https://www.ubc.ca/">University of British Columbia</a> 
+
+profile:
+  align: right 
+  image: prof_pic.jpg
+  address:
+
+news: true  # includes a list of news items
+selected_papers: true # includes a list of papers marked as "selected={true}"
+---
+<p style="color:red;">Welcome to you, and also welcome to me!</p>
+
+I'm a CS Ph.D. student at the University of British Columbia, advised by <a href="https://peterchencyc.com/">Prof. Peter Yichen Chen</a>.
+
+My research develops <b>AI foundation models for protein structure, interaction, and dynamics</b>, combining geometric deep learning, physics-grounded priors, and large-scale molecular dynamics data. I am particularly interested in (i) physically valid biomolecular generation, (ii) scalable protein&ndash;protein interaction discovery, and (iii) Transformer-based neural simulators that learn protein conformational dynamics from MD trajectories. More broadly, I work on neural surrogate models for physical dynamics, at the intersection of computer graphics, scientific computing, and machine learning.
+
+I graduated from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> with a B.S. degree in Physics and a minor in Computer Science.
+
+Before starting my Ph.D., I interned at SJTU DA Lab, where I worked with Prof. Xubo Yang and Ph.D. student Hui Wang, and also collaborated remotely with Bo Zhu. I also worked at DMCV with Prof. Ran Yi. From September 2024 to December 2024, I was an exchange student at the University of Toronto, where I worked with Zhecheng and Prof. Eitan Grinspun.

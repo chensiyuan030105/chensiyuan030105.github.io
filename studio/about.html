@@ -1,0 +1,22 @@
+<main id="main" class="shell content-page about-page">
+  <h1 class="page-title">About</h1>
+  <div class="about-grid">
+    <aside class="about-profile">
+      <img class="portrait" src="/assets/img/prof_pic.jpg" width="160" height="160" alt="Mountain landscape from Siyuan's profile">
+      <h2>Siyuan Chen</h2>
+      <p class="affiliation">Computer Science PhD<br>University of British Columbia</p>
+      <dl class="contact-list"><dt>Email</dt><dd><a href="mailto:chensiyuan030105@gmail.com">chensiyuan030105<br>@gmail.com</a></dd><dt>Elsewhere</dt><dd class="profile-links"><a href="/assets/pdf/cv.pdf">CV ↗</a><a href="https://github.com/chensiyuan030105">GitHub ↗</a></dd></dl>
+    </aside>
+    <div class="about-body">
+      <p class="section-label">Research</p>
+      <h2>Learning the dynamics<br>of the physical world.</h2>
+      <p>I'm a CS Ph.D. student at the <a href="https://www.ubc.ca/">University of British Columbia</a>, advised by <a href="https://peterchencyc.com/">Prof. Peter Yichen Chen</a>.</p>
+      <p>My research spans <strong>computer graphics, physical simulation, and machine learning</strong>. I work on computational methods and learned models for geometry and dynamics, with an emphasis on efficient simulation and physically grounded representations.</p>
+      <p>My current interests include neural simulation of fluids and particle systems, reduced-order models for physical dynamics, and applications of deep learning and generative AI to 3D content and biomolecular modeling. Across these directions, I aim to combine physical structure with data-driven learning to build models that are efficient, accurate, and controllable.</p>
+      <p>I graduated from <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University</a> with a B.S. in Physics and a minor in Computer Science.</p>
+      <p>Before my Ph.D., I interned at SJTU DA Lab with Prof. Xubo Yang and Hui Wang, collaborated remotely with Bo Zhu, and worked at DMCV with Prof. Ran Yi. In fall 2024, I was an exchange student at the University of Toronto, working with Zhecheng Wang and Prof. Eitan Grinspun.</p>
+      <div class="about-cta"><a href="/publications/">View publications ↗</a><a href="/demos/">Explore demos ↗</a></div>
+      <section class="news-section"><h2>Recently</h2><ul class="news-list">{% for item in news limit: 6 %}<li><time>{{ item.date | month }}</time><span>{{ item.content }}</span></li>{% endfor %}</ul></section>
+    </div>
+  </div>
+</main>
